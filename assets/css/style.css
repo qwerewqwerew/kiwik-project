@@ -285,12 +285,13 @@
 }
 
 /* ---------- 통계 블록(중장기 감축 목표) ---------- */
+/* Figma: padding 32px, gap 16px, border-radius --radius-md(6px) */
 .stat-block {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  border-radius: var(--radius-xl);
-  padding: 1.5rem;
+  gap: 1rem;
+  border-radius: var(--radius-md);
+  padding: 2rem;
 }
 
 /* ---------- CSR / 발자국 카드 ---------- */
