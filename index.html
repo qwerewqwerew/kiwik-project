@@ -55,6 +55,10 @@
   --color-text-invert: #ffffff;   /* white */
   --color-footer-body: #6b7280;   /* gray/500 */
 
+  /* ---------- 색: 서브페이지 전용 ---------- */
+  --color-border-default: #e5e7eb; /* token-exempt: @theme 정의 — border/border-grey-out 아티클 내부 구분선 */
+  --color-near-black: #030712;     /* token-exempt: @theme 정의 — text/text-primary 아티클 카드 제목색 */
+
   /* ---------- 색: 스크림(사진 위 가독성 확보용) ---------- */
   --color-scrim-hero: rgba(0, 0, 0, 0.85); /* token-exempt: @theme 정의 */
   --color-scrim-banner: rgba(0, 0, 0, 0.45); /* token-exempt: @theme 정의 */
@@ -81,6 +85,11 @@
   --spacing-header-desktop: 152px;
   /* 시안 About 미디어 500px @1080 뷰포트를 자르지 않는 상한 */
   --spacing-media-cap: 48vh;
+  /* 서브페이지 전용 레이아웃 */
+  --spacing-subpage-banner: 450px;   /* 히어로 배너 높이 */
+  --spacing-sidebar-col: 340px;      /* 사이드바 열 너비 */
+  --spacing-col-gap: 60px;           /* 아티클-사이드바 간격 */
+  --spacing-article-bottom: 120px;   /* 아티클 영역 하단 패딩 */
 
   /* 시안 기준 미디어 옆 텍스트 열 고정 폭 */
   --spacing-text-col: 360px;
@@ -109,6 +118,7 @@
   /* ---------- 행간 ---------- */
   --leading-body: 1.6;
   --leading-body-lg: 1.7;
+  --leading-body-xl: 1.8;   /* 서브페이지 아티클 본문 */
 
   /* ---------- 글자 크기 (데스크톱 1920px 기준 유동값) ---------- */
   --text-hero: clamp(2.25rem, 3.75vw, 4.5rem);
@@ -142,6 +152,10 @@
   /* 시안 지구식단 배너 대형 제목(56px @1920px 캔버스) */
   --text-display-lg: clamp(2rem, 2.9167vw, 3.5rem);
   --text-display-lg--line-height: 1.3;
+
+  /* 서브페이지 히어로 제목 (Figma: 48px 고정 → 반응형 처리) */
+  --text-subpage-hero: clamp(1.75rem, 2.5vw, 3rem);
+  --text-subpage-hero--line-height: 1.3;
 }
 
 /* style.css에서만 참조하는 토큰.
