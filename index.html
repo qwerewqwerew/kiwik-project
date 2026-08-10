@@ -157,6 +157,10 @@
   /* 시안 소형 뉴스 카드 날짜·카테고리 (Figma section5 소형 카드 기준 13px) */
   --text-news-meta: 13px;
 
+  /* 시안 최소 라벨 크기(Figma 11px 고정, leading: normal) — 추진방향 카드 아이콘 라벨(node 3004:1391 등),
+     모바일 Nature Positive 섹션 eyebrow 라벨(node 3007:2523과 동일 스타일) */
+  --text-caption: 11px;
+
   /* 시안 지구식단 배너 대형 제목(56px @1920px 캔버스) */
   --text-display-lg: clamp(2rem, 2.9167vw, 3.5rem);
   --text-display-lg--line-height: 1.3;
@@ -397,25 +401,25 @@
                   <span class="flex size-16 items-center justify-center rounded-full bg-green-50">
                     <img src="assets/icons/zap.svg" alt="" width="32" height="32" class="size-8" />
                   </span>
-                  <span class="text-xs font-bold text-brand-700">지속가능<br />에너지</span>
+                  <span class="text-caption font-bold text-brand-700">지속가능<br />에너지</span>
                 </span>
                 <span class="flex flex-col items-center gap-1.5">
                   <span class="flex size-16 items-center justify-center rounded-full bg-green-50">
                     <img src="assets/icons/globe-mini.svg" alt="" width="32" height="32" class="size-8" />
                   </span>
-                  <span class="text-xs font-bold text-brand-700">지속가능<br />원재료</span>
+                  <span class="text-caption font-bold text-brand-700">지속가능<br />원재료</span>
                 </span>
                 <span class="flex flex-col items-center gap-1.5">
                   <span class="flex size-16 items-center justify-center rounded-full bg-green-50">
                     <img src="assets/icons/droplet.svg" alt="" width="32" height="32" class="size-8" />
                   </span>
-                  <span class="text-xs font-bold text-brand-700">지속가능<br />수자원</span>
+                  <span class="text-caption font-bold text-brand-700">지속가능<br />수자원</span>
                 </span>
                 <span class="flex flex-col items-center gap-1.5">
                   <span class="flex size-16 items-center justify-center rounded-full bg-green-50">
                     <img src="assets/icons/handshake.svg" alt="" width="32" height="32" class="size-8" />
                   </span>
-                  <span class="text-xs font-bold text-brand-700">지속가능<br />파트너십</span>
+                  <span class="text-caption font-bold text-brand-700">지속가능<br />파트너십</span>
                 </span>
               </div>
             </li>
@@ -509,7 +513,7 @@
        ============================================================ -->
   <section class="lg:hidden bg-gray-50" aria-label="지구환경 보호">
     <div class="flex flex-col items-center gap-4 px-8 py-10 text-center">
-      <p class="text-xs font-extrabold uppercase tracking-label text-brand-700">NATURE POSITIVE</p>
+      <p class="text-caption font-extrabold uppercase tracking-label text-brand-700">NATURE POSITIVE</p>
       <p class="text-lg font-extrabold text-text-primary">건강한 지구환경을 생각하는 풀무원</p>
       <!-- 지구 일러스트 에셋(earth-illustration.png)이 assets/images에 없어
            about-media.png로 임시 대체. 실제 에셋 추가 후 교체 필요. -->
