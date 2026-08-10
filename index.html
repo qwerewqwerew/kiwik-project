@@ -260,7 +260,8 @@
         <img src="assets/images/hero.png" alt="" class="hero__bg" />
         <div class="hero__scrim bg-gradient-to-b from-scrim-banner via-scrim-mobile-via via-60% to-scrim-hero lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:via-35% lg:to-scrim-hero" aria-hidden="true"></div>
 
-        <div class="hero__inner mx-auto flex w-full max-w-page flex-col justify-between gap-12 px-6">
+        <div class="hero__inner mx-auto flex w-full max-w-page flex-col justify-between px-6">
+          <!-- 상단: 태그라인 · 제목 · 부제 · 데스크톱 CTA -->
           <div class="flex flex-col items-start gap-6">
             <p class="flex items-center gap-2">
               <span class="h-0.5 w-10 shrink-0 bg-brand lg:bg-green-50" aria-hidden="true"></span>
@@ -275,10 +276,24 @@
               A Plan for a Better World - Net Zero &amp; Nature Positive
             </p>
 
-            <a class="btn-brand bg-cta mt-2 self-start hidden lg:inline-flex" href="#section2">감축 계획 자세히 보기</a>
+            <!-- CTA: 데스크톱 전용 — div로 감싸야 btn-brand CSS 캐스케이드를 우회 가능 -->
+            <div class="hidden lg:flex">
+              <a class="btn-brand bg-cta self-start" href="#section2">감축 계획 자세히 보기</a>
+            </div>
           </div>
 
-          <div class="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
+          <!-- 하단 모바일: 제목 + 설명 (Figma 모바일 Bottom_Copy) -->
+          <div class="flex flex-col gap-3 pb-2 lg:hidden">
+            <p class="ts-hero text-hero-sub font-bold tracking-tighter text-text-invert">
+              늘어난 먹거리<br />줄어든 플라스틱 배출
+            </p>
+            <p class="ts-strong text-sm leading-body text-text-invert">
+              eco-caring은 지구온도 상승을 1.5℃ 이하로 제한하기 위한 풀무원의 실천 계획입니다.
+            </p>
+          </div>
+
+          <!-- 하단 데스크톱: SCROLL DOWN (좌) + 카피 (우) -->
+          <div class="hidden lg:flex lg:flex-row lg:items-end lg:justify-between">
             <p class="flex items-center gap-3 py-3">
               <span class="ts-hero text-sm font-bold tracking-wider text-text-invert">SCROLL DOWN</span>
               <span class="scroll-cue flex size-6 items-center justify-center" aria-hidden="true">
@@ -286,7 +301,7 @@
               </span>
             </p>
 
-            <div class="flex max-w-2xl flex-col gap-3 lg:items-end lg:text-right">
+            <div class="flex max-w-2xl flex-col gap-3 items-end text-right">
               <p class="ts-hero text-hero-sub font-bold tracking-tighter text-text-invert">
                 늘어난 먹거리<br />줄어든 플라스틱 배출
               </p>
