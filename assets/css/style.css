@@ -335,21 +335,22 @@
   font-size: 1rem;
 }
 
-/* ---------- 뉴스 리스트 행 ---------- */
+/* ---------- 뉴스 리스트 행 ----------
+   Figma section4: 164px 높이, 24px gap, 10px 내부 padding, 완전 border */
 .news-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border-bottom: var(--spacing-hairline) solid var(--color-gray-200);
-  padding-block: 1rem;
-}
-.news-row:first-child {
-  padding-top: 0;
+  gap: 1.5rem;                                          /* Figma: 24px */
+  border: var(--spacing-hairline) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: 0.625rem;                                    /* Figma: 10px */
+  min-height: var(--spacing-news-card);                 /* Figma: 164px */
 }
 .news-row__thumb {
   flex: none;
-  width: 6rem;
-  border-radius: var(--radius-lg);
+  width: var(--spacing-news-thumb);                     /* Figma: 144px */
+  height: var(--spacing-news-thumb);                    /* Figma: 144px, 정방형 */
+  border-radius: var(--radius-md);                      /* Figma: radius-md(6px) */
   object-fit: cover;
 }
 
@@ -379,10 +380,11 @@
   flex: 1 1 0;
   min-width: 0;
 }
-/* 뉴스 리스트는 데스크톱에서도 세로 스택으로 표시한다. */
+/* 뉴스 리스트는 데스크톱에서도 세로 스택으로 표시한다.
+   Figma: 카드 사이 gap 32px */
 .card-swiper[data-swiper="news"]:not(.swiper-initialized) .swiper-wrapper {
   flex-direction: column;
-  gap: 0;
+  gap: 2rem;
 }
 .card-swiper:not(.swiper-initialized) .swiper-pagination {
   display: none;

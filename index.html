@@ -99,6 +99,11 @@
   --spacing-icon-circle-lg: 120px;
   --spacing-icon-lg: 88px;
 
+  /* ---------- 뉴스룸 카드 (Figma section4 기준) ---------- */
+  --spacing-news-thumb: 144px;   /* 소형 뉴스 카드 썸네일 크기(정방형) */
+  --spacing-news-card: 164px;    /* 소형 뉴스 카드 최소 높이 */
+  --spacing-newsroom-small: 410px; /* 뉴스룸 그리드 소형카드 열 너비 */
+
   /* ---------- 비율 ---------- */
   --aspect-about: 38 / 25;
   --aspect-featured: 2 / 1;
@@ -183,6 +188,12 @@
 
 @utility grid-media-text-wide {
   grid-template-columns: 1fr var(--spacing-text-col-wide);
+}
+
+/* 뉴스룸 전용 그리드: featured(~750px) + 소형카드(410px)
+   Figma section4 기준 1200px 콘텐츠 영역 = 1fr + 410px + 40px gap */
+@utility grid-newsroom {
+  grid-template-columns: 1fr var(--spacing-newsroom-small);
 }
 </style>
 </head>
@@ -340,7 +351,6 @@
         <div class="mx-auto w-full max-w-page px-6">
           <header class="mb-10 flex flex-col gap-2">
             <h2 id="s2-title" class="text-section font-black text-text-primary">Eco-Caring이란?</h2>
-            <p class="text-base text-text-secondary">GOAL · DIRECTION · SCOPE</p>
           </header>
 
           <ul class="grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -414,7 +424,6 @@
         <div class="mx-auto w-full max-w-page px-6">
           <header class="mb-10 flex flex-col gap-2">
             <h2 class="text-section font-black text-text-invert">2035 풀무원의 중장기 감축 목표</h2>
-            <p class="text-base text-gray-400">PULMUONE ECO-CARING BY NUMBERS</p>
           </header>
 
           <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-6">
@@ -550,13 +559,13 @@
             <p class="text-base text-text-secondary">PULMUONE NEWSROOM</p>
           </header>
 
-          <div class="grid gap-10 lg:grid-media-text">
+          <div class="grid gap-10 lg:grid-newsroom">
             <article class="flex flex-col gap-6">
               <a class="focus-ring block overflow-hidden rounded-xl" href="#section5">
                 <img src="assets/images/news-featured.png" alt="풀무원 넷제로 시스템 검증의견서 수여 현장" class="aspect-featured w-full object-cover" loading="lazy" />
               </a>
               <p class="text-sm font-bold text-green-900">보도자료 · 2025.03.13</p>
-              <h3 class="text-display-sm font-extrabold text-text-primary">
+              <h3 class="text-3xl font-extrabold text-text-primary">
                 <a class="focus-ring" href="#section5">풀무원, 국내 식품업계 최초 ‘넷제로 시스템’ 구축</a>
               </h3>
               <p class="text-base leading-normal text-footer-body">
@@ -567,7 +576,7 @@
             <div class="swiper card-swiper" data-swiper="news">
               <ul class="swiper-wrapper">
                 <li class="swiper-slide news-row">
-                  <img src="assets/images/news-small-1.png" alt="지구식단 두유면 제품 이미지" class="news-row__thumb aspect-thumb" loading="lazy" />
+                  <img src="assets/images/news-small-1.png" alt="지구식단 두유면 제품 이미지" class="news-row__thumb" loading="lazy" />
                   <div class="flex min-w-0 flex-col gap-2">
                     <p class="text-xs font-bold text-green-900">보도자료 · 2025.02.17</p>
                     <h3 class="text-lg font-bold text-text-primary">
@@ -576,7 +585,7 @@
                   </div>
                 </li>
                 <li class="swiper-slide news-row">
-                  <img src="assets/images/news-small-2.png" alt="유기동물 보호단체에 전달된 사료" class="news-row__thumb aspect-thumb" loading="lazy" />
+                  <img src="assets/images/news-small-2.png" alt="유기동물 보호단체에 전달된 사료" class="news-row__thumb" loading="lazy" />
                   <div class="flex min-w-0 flex-col gap-2">
                     <p class="text-xs font-bold text-green-900">ESG 소식 · 2025.02.28</p>
                     <h3 class="text-lg font-bold text-text-primary">
@@ -585,7 +594,7 @@
                   </div>
                 </li>
                 <li class="swiper-slide news-row">
-                  <img src="assets/images/news-small-3.png" alt="친환경 케어 전략 선언 현장" class="news-row__thumb aspect-thumb" loading="lazy" />
+                  <img src="assets/images/news-small-3.png" alt="친환경 케어 전략 선언 현장" class="news-row__thumb" loading="lazy" />
                   <div class="flex min-w-0 flex-col gap-2">
                     <p class="text-xs font-bold text-green-900">지속가능경영 · 2024.01.31</p>
                     <h3 class="text-lg font-bold text-text-primary">
@@ -594,7 +603,7 @@
                   </div>
                 </li>
                 <li class="swiper-slide news-row">
-                  <img src="assets/images/news-small-1.png" alt="풀무원 지속가능경영 보고서 표지" class="news-row__thumb aspect-thumb" loading="lazy" />
+                  <img src="assets/images/news-small-1.png" alt="풀무원 지속가능경영 보고서 표지" class="news-row__thumb" loading="lazy" />
                   <div class="flex min-w-0 flex-col gap-2">
                     <p class="text-xs font-bold text-green-900">지속가능경영 · 2024.01.31</p>
                     <h3 class="text-lg font-bold text-text-primary">
@@ -662,29 +671,29 @@
         <div class="mx-auto w-full max-w-page px-6">
           <header class="mb-10 flex flex-col gap-2">
             <h2 id="s7-title" class="text-section font-black text-text-primary">SNS</h2>
-            <p class="text-base text-text-secondary">PULMUONE SOCIAL NETWORK SERVICE</p>
+            <p class="text-base text-text-secondary">PULMUONE Social Network Service</p>
           </header>
 
           <div class="flex flex-col gap-6 pb-6">
             <h3 class="text-3xl font-extrabold text-text-primary">풀무원 인스타그램</h3>
             <ul class="grid grid-cols-2 gap-6 lg:grid-cols-4">
               <li>
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-instagram-1.png" alt="풀무원 인스타그램 게시물 1" class="aspect-instagram w-full object-cover" loading="lazy" />
                 </a>
               </li>
               <li>
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-instagram-2.png" alt="풀무원 인스타그램 게시물 2" class="aspect-instagram w-full object-cover" loading="lazy" />
                 </a>
               </li>
               <li>
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-instagram-3.png" alt="풀무원 인스타그램 게시물 3" class="aspect-instagram w-full object-cover" loading="lazy" />
                 </a>
               </li>
               <li>
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-instagram-4.png" alt="풀무원 인스타그램 게시물 4" class="aspect-instagram w-full object-cover" loading="lazy" />
                 </a>
               </li>
@@ -695,7 +704,7 @@
             <h3 class="text-3xl font-extrabold text-text-primary">풀무원 유튜브</h3>
             <ul class="grid grid-cols-1 gap-6 lg:grid-cols-3">
               <li class="relative">
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-youtube-1.png" alt="풀무원 유튜브 영상 1" class="aspect-video w-full object-cover" loading="lazy" />
                   <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                     <span class="relative flex items-center justify-center">
@@ -706,7 +715,7 @@
                 </a>
               </li>
               <li class="relative">
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-youtube-2.png" alt="풀무원 유튜브 영상 2" class="aspect-video w-full object-cover" loading="lazy" />
                   <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                     <span class="relative flex items-center justify-center">
@@ -717,7 +726,7 @@
                 </a>
               </li>
               <li class="relative">
-                <a class="focus-ring block overflow-hidden rounded-xl border border-gray-200" href="#site-footer">
+                <a class="focus-ring block overflow-hidden rounded-xl border border-border-default" href="#site-footer">
                   <img src="assets/images/social-youtube-3.png" alt="풀무원 유튜브 영상 3" class="aspect-video w-full object-cover" loading="lazy" />
                   <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                     <span class="relative flex items-center justify-center">
