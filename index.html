@@ -56,8 +56,9 @@
   --color-footer-body: #6b7280;   /* gray/500 */
 
   /* ---------- 색: 스크림(사진 위 가독성 확보용) ---------- */
-  --color-scrim-hero: rgba(0, 0, 0, 0.85);
-  --color-scrim-banner: rgba(0, 0, 0, 0.45);
+  --color-scrim-hero: rgba(0, 0, 0, 0.85); /* token-exempt: @theme 정의 */
+  --color-scrim-banner: rgba(0, 0, 0, 0.45); /* token-exempt: @theme 정의 */
+  --color-scrim-mobile-via: rgba(0, 0, 0, 0.70); /* token-exempt: @theme 정의 — Figma 모바일 Hero 스크림 중간값 */
 
   /* ---------- 색: Hero CTA 버튼 ---------- */
   --color-cta: #6ba842; /* token-exempt: Figma Hero CTA 버튼 색(lime/700 계열, node 3010:193) */
@@ -257,13 +258,13 @@
     <div class="panel__scroll pt-header-mobile lg:pt-header-desktop">
       <div class="hero">
         <img src="assets/images/hero.png" alt="" class="hero__bg" />
-        <div class="hero__scrim bg-gradient-to-b from-scrim-banner to-scrim-hero lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:via-35% lg:to-scrim-hero" aria-hidden="true"></div>
+        <div class="hero__scrim bg-gradient-to-b from-scrim-banner via-scrim-mobile-via via-60% to-scrim-hero lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:via-35% lg:to-scrim-hero" aria-hidden="true"></div>
 
         <div class="hero__inner mx-auto flex w-full max-w-page flex-col justify-between gap-12 px-6">
           <div class="flex flex-col items-start gap-6">
             <p class="flex items-center gap-2">
-              <span class="h-0.5 w-10 shrink-0 bg-green-50" aria-hidden="true"></span>
-              <span class="ts-strong text-sm font-bold tracking-widest text-green-50">친환경 케어 Eco-Caring</span>
+              <span class="h-0.5 w-10 shrink-0 bg-brand lg:bg-green-50" aria-hidden="true"></span>
+              <span class="ts-strong text-sm font-bold tracking-widest text-brand lg:text-green-50">친환경 케어 Eco-Caring</span>
             </p>
 
             <h1 id="hero-title" class="ts-hero text-hero font-black tracking-tight text-text-invert">
@@ -274,7 +275,7 @@
               A Plan for a Better World - Net Zero &amp; Nature Positive
             </p>
 
-            <a class="btn-brand bg-cta mt-2 self-start" href="#section2">감축 계획 자세히 보기</a>
+            <a class="btn-brand bg-cta mt-2 self-start hidden lg:inline-flex" href="#section2">감축 계획 자세히 보기</a>
           </div>
 
           <div class="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
